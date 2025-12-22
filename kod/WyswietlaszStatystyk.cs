@@ -5,7 +5,6 @@ using System.Net.WebSockets;
 public class WyswietlaszStatystyk : MonoBehaviour
 {
     public TextMeshProUGUI statsText;
-    public LiczenieCzasu playTime; 
 
     void Update()
     {
@@ -19,7 +18,7 @@ public class WyswietlaszStatystyk : MonoBehaviour
 
         statsText.text =
             $"Czas sesji: {hours2:00}:{minutes2:00}:{seconds2:00}\n" +
-            $"Całkowite zebrane pieniądze: {kasa} \n" +
+            $"Całkowite zebrane pieniądze: {MoneyFormatter.Format(kasa)} \n" +
             $"Kliknięcia: {clicks}";
     }
 }

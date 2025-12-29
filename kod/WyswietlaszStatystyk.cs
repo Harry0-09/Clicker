@@ -9,16 +9,18 @@ public class WyswietlaszStatystyk : MonoBehaviour
     void Update()
     {
         float czasSesji = GameManager.Instance.sessionTime;
-        float clicks = GameManager.Instance.klikniecia;
-        float kasa = GameManager.Instance.kasaCalkowita;
+        long clicks = GameManager.Instance.klikniecia;
+        double kasa = GameManager.Instance.kasaCalkowita;
 
         int hours2 = Mathf.FloorToInt(czasSesji/ 3600);
         int minutes2 = Mathf.FloorToInt((czasSesji % 3600) / 60);
         int seconds2 = Mathf.FloorToInt(czasSesji % 60);
-
+        
+        
         statsText.text =
             $"Czas sesji: {hours2:00}:{minutes2:00}:{seconds2:00}\n" +
             $"Całkowite zebrane pieniądze: {MoneyFormatter.Format(kasa)} \n" +
-            $"Kliknięcia: {clicks}";
+            $"Kliknięcia: {clicks} \n";
+            
     }
 }
